@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: weshare.webtests.ExpensesPageTests
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 1, Skipped: 2, Time elapsed: 5.858 s <<< FAILURE! - in weshare.webtests.ExpensesPageTests
+noExpenses  Time elapsed: 4.71 s  <<< ERROR!
+java.lang.UnsatisfiedLinkError: Can't load library: /usr/lib/jvm/java-11-openjdk-amd64/lib/libawt_xawt.so
+	at weshare.webtests.ExpensesPageTests.noExpenses(ExpensesPageTests.java:54)
+

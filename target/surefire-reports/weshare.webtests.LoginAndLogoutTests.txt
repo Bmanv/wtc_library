@@ -1,0 +1,16 @@
+-------------------------------------------------------------------------------
+Test set: weshare.webtests.LoginAndLogoutTests
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 3.596 s <<< FAILURE! - in weshare.webtests.LoginAndLogoutTests
+logout  Time elapsed: 1.07 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class ru.yandex.qatools.ashot.coordinates.Coords
+	at weshare.webtests.LoginAndLogoutTests.logout(LoginAndLogoutTests.java:53)
+
+successfulLogin  Time elapsed: 1.431 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class ru.yandex.qatools.ashot.coordinates.Coords
+	at weshare.webtests.LoginAndLogoutTests.successfulLogin(LoginAndLogoutTests.java:46)
+
+redirectWhenNotLoggedIn  Time elapsed: 1.085 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class ru.yandex.qatools.ashot.coordinates.Coords
+	at weshare.webtests.LoginAndLogoutTests.redirectWhenNotLoggedIn(LoginAndLogoutTests.java:35)
+

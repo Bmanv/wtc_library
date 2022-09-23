@@ -1,0 +1,66 @@
+#expenses_tb {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+  table-layout: fixed;
+  margin-top: 0.5em;
+}
+
+
+
+#expenses_tb tr:nth-child(even),#form_fieldset{background-color: #c3e3eb;}
+
+#expenses_tb tr:nth-child(odd){background-color: #83c7d7;}
+
+#expenses_tb tr:hover {background-color: #ffffff;
+    border: 3px solid purple;
+    border-radius: 5px;
+    }
+
+#expenses_tb th {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+
+
+#expenses_tb thead{
+    pointer-events: none;
+}
+
+#home{
+    margin: 20px;
+    display: grid;
+    grid-template-columns: 280px 280px 280px;
+    grid-template-rows: 300px 300px 300px;
+    column-gap: 30px;
+    row-gap: 20px;
+}
+#read_book{
+    margin: 20px;
+    padding: 20px
+}
+#catalog{
+    grid-column: 1/2;
+    grid-row: 1 / 2;
+}
+
+
+
+#patrons{
+    grid-column: 2/3;
+    grid-row: 1 / 2;
+}
+
+#fav{
+    grid-column: 3/4;
+    grid-row: 1 / 2;
+}
+
+img{
+    width:280px;
+    height: 300px;
+
+}

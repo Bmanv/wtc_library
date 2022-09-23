@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{/layout.html}">
+<head>
+    <link rel="stylesheet" href="css/expense_table.css">
+</head>
+<body>
+<div layout:fragment="contents">
+    <h3 id="no_books" th:if="${#lists.isEmpty(books)}">Writer's pen went dry. We highly suggest that <br>
+        you take this time to connect with God.</h3>
+    <div id="expenses" th:unless="${#lists.isEmpty(books)}">
+        <h3>Previous Payment Request for this expense</h3>
+        <table id="expenses_tb">
+            <tr>
+                <th>ISBN</th>
+                <th>title</th>
+                <th>genre_code</th>
+                <th>edition</th>
+            </tr>
+            <tr th:each="book: ${books}">
+<!--                <td><a th:id="${book.ISBN}" href="/bookdetails"><span th:id="'ISBN_'" th:text="${book.ISBN}"></span></a></td>-->
+                <td th:id="'ISBN'+ ${book.ISBN}">
+                    <a th:id="|ISBN_${book.ISBN}|"
+                       href="/bookdetails" th:href="@{/bookdetails?{ex}={id}(ex = 'bookID',id = ${book.ISBN})}"
+                       th:text="${book.ISBN}" /></td>
+                <td><span th:id="'title'" th:text="${book.title}"></span></td>
+                <td><span th:id="'genre_'" th:text="${book.genre_code}">No</span></td>
+                <td><span th:id="'eidition_'" th:text="${book.edition}"></span></td>
+
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+
+</html>

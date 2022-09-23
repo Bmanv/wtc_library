@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="eodsql">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/eodsql.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

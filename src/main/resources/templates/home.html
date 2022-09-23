@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{/layout.html}">
+<head>
+    <link rel="stylesheet" href="css/expense_table.css">
+</head>
+<body>
+<div layout:fragment="contents">
+    <div id="home">
+        <div    id="catalog">
+            <figure>
+                <a href="/viewbooks"><img src="cat.jpg" alt="Book Catalog" ></a>
+                <a href="/viewbooks"><figcaption>All Books</figcaption></a>
+            </figure>
+
+        </div>
+
+        <div    id="patrons">
+            <figure>
+                <a href="/borrowedbooks"><img src="readd.jpg" alt="Current reads" ></a>
+                <a href="/borrowedbooks"><figcaption>Current Read</figcaption></a>
+            </figure>
+        </div>
+
+        <div    id="fav">
+            <figure>
+                <a href="/favbooks"><img src="fav.jpg" alt="Favorite books"></a>
+                <a href="/favbooks"><figcaption>Favorite Books</figcaption></a>
+            </figure>
+        </div>
+
+
+
+    </div>
+</div>
+</body>
+
+</html>

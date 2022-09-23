@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{/layout.html}">
+<head>
+    <link rel="stylesheet" href="css/expense_table.css">
+</head>
+<body>
+<div layout:fragment="contents">
+    <h3 id="no_books" th:if="${#lists.isEmpty(books)}">Writer's pen went dry. We highly suggest that <br>
+        you take this time to connect with God.</h3>
+    <div id="expenses" th:unless="${#lists.isEmpty(books)}">
+        <h3>Previous Payment Request for this expense</h3>
+        <table id="expenses_tb">
+            <tr>
+                <th>ISBN</th>
+                <th>title</th>
+                <th>Description</th>
+                <th>edition</th>
+                <th>When did you borrow the book</th>
+                <th>Due Date</th>
+                <th>Status</th>
+            </tr>
+            <tr th:each="book: ${books}">
+<!--                <td><a th:id="${book.book.ISBN}" href="/readbook"><span th:id="'ISBN_'" th:text="${book.book.ISBN}"></span></a></td>-->
+                <td th:id="'ISBN'+ ${book.getId()}">
+                    <a th:id="|ISBN_${book.getId()}|"
+                       href="/readbook" th:href="@{/readbook?{ex}={id}(ex = 'bookID',id = ${book.getId()})}"
+                       th:text="${book.book.ISBN}" /></td>
+                <td><span th:id="'title'" th:text="${book.book.title}"></span></td>
+                <td><span th:id="'genre_'" th:text="${book.book.genre.description}">No</span></td>
+                <td><span th:id="'genre_'" th:text="${book.book.edition}">No</span></td>
+                <td><span th:id="'genre_'" th:text="${book.getDate_issued()}">No</span></td>
+                <td><span th:id="'due_date_'" th:text="${book.getDue_date()}"></span></td>
+                <td><span th:id="'due_date_'" th:text="'You have '+${book.daysLeftToReturnBook()}+ ' Days left to return the book'"></span></td>
+
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{/layout.html}">
+<head>
+  <link rel="stylesheet" href="css/expense_table.css">
+</head>
+<body>
+<div layout:fragment="contents">
+  <form method="post" action="/registeruser.action" enctype="application/x-www-form-urlencoded">
+    <fieldset id="form_fieldset">
+    <label for="firstname">First name</label>
+    <input name="firstname" id="firstname" type="text" autofocus required>
+    <label for="lastname">Last name</label>
+    <input name="lastname" id="lastname" type="text" autofocus required>
+    <label for="email">Email</label>
+    <input name="email" id="email" type="email" autofocus required>
+    <label for="password">Password</label>
+    <input name="password" id="password" type="password" autofocus required>
+    <label for="confirmed_password">Confirm Password</label>
+    <input name="confirmed_password" id="confirmed_password" type="password" autofocus required>
+    <input id="submit" type="submit" value="Register"/>
+    </fieldset>
+  </form>
+</div>
+</body>
+
+</html>
