@@ -5,7 +5,49 @@
         layout:decorate="~{/layout.html}">
 <head>
   <link rel="stylesheet" href="css/expense_table.css">
+
+
+<style>
+
+    /* The message box is shown when the user clicks on the password field */
+    #message {
+    display:none;
+    background: #f1f1f1;
+    color: #000;
+    position: relative;
+    padding: 20px;
+    margin-top: 10px;
+    }
+
+    #message p {
+    padding: 10px 35px;
+    font-size: 18px;
+    }
+
+    /* Add a green text color and a checkmark when the requirements are right */
+    .valid {
+    color: green;
+    }
+
+    .valid:before {
+    position: relative;
+    left: -35px;
+    content: "\2713";
+    }
+
+    /* Add a red text color and an "x" when the requirements are wrong */
+    .invalid {
+    color: red;
+    }
+
+    .invalid:before {
+    position: relative;
+    left: -35px;
+    content: "\274c";
+    }
+  </style>
 </head>
+
 <body>
 <div layout:fragment="contents">
   <form method="post" action="/registeruser.action" enctype="application/x-www-form-urlencoded">
@@ -17,13 +59,26 @@
     <label for="email">Email</label>
     <input name="email" id="email" type="email" autofocus required>
     <label for="password">Password</label>
-    <input name="password" id="password" type="password" autofocus required>
+    <input type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}"
+             title="Must contain at least one number and one uppercase and lowercase letter, and at least 5 or more characters" required>
+    <input type="checkbox" onclick="showPassword()">Show Password
+      <div id="message">
+        <h3>Password must contain the following:</h3>
+        <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+        <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+        <p id="number" class="invalid">A <b>number</b></p>
+        <p id="length" class="invalid">Minimum <b>5 characters</b></p>
+      </div>
     <label for="confirmed_password">Confirm Password</label>
     <input name="confirmed_password" id="confirmed_password" type="password" autofocus required>
     <input id="submit" type="submit" value="Register"/>
     </fieldset>
   </form>
+
 </div>
+
+<script src="/javascript/password_validator_script.js"></script>
+<script src="/javascript/show_password.js"></script>
 </body>
 
 </html>

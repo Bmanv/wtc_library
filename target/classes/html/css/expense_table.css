@@ -64,3 +64,11 @@ img{
     height: 300px;
 
 }
+
+#bdiframe{
+    overflow-y:hidden;
+}
+#newuser:hover {
+    text-decoration: underline !important;
+    background-color:yellow;
+   }

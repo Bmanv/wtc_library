@@ -13,12 +13,12 @@
             <h1 th:text="'Title: '+ ${read.book.title}" />
 
             <object
-                    th:data="${read.getId()}+'.pdf#page=2'"
+                    th:data="${read.getId()}+'.pdf#toolbar=0&navpanes=0&scrollbar=1'"
                     type="application/pdf"
                     width="80%"
                     height="500px"
             >
-            <iframe th:src="${read.getId()}+'.pdf#toolbar=0'" width="70%" height="500px">
+            <iframe th:src="${read.getId()}+'.pdf#toolbar=0&navpanes=0&scrollbar=1'" width="70%" height="500px">
             </iframe>
             </object>
         </div>

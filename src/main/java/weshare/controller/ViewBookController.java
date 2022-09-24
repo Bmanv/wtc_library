@@ -33,7 +33,7 @@ public class ViewBookController {
         setUuid(context);
         Map<String, Object> viewModel = Map.of("book",
                 finderDAO.getBook(ISBN).get());
-        context.render("book_details.html");
+        context.render("book_details.html", viewModel);
     };
 
     public static final Handler borrowBook = context -> {

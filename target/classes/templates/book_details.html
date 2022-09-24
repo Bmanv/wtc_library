@@ -11,7 +11,17 @@
     <h1>Book details</h1>
     <div>
         <div>
-            <img src="java2.jpg" alt="Java Book" ></a>
+            <table>
+            <tr th:each="bookk: ${book}">
+                <iframe id="bdiframe" src="3.pdf#toolbar=0&navpanes=0&scrollbar=1" scrolling="no" seamless="seamless" type="application/pdf" width="70%" height="500px">
+                </iframe>
+                <td><span th:text="'ISBN: '+${bookk.ISBN}" /><br>
+                <span th:id="'title'" th:text="'Title:' +${bookk.title}"/><br>
+                <span th:id="'genre_'" th:text="'Description: '+${bookk.genre.description}"/><br>
+                <span th:id="'genre_'" th:text="'Edition: '+ ${bookk.edition}"/>
+                </td>
+            </tr>
+            </table>
         </div>
 
         <div>

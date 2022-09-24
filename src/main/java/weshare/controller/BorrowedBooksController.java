@@ -31,8 +31,6 @@ public class BorrowedBooksController {
                 personLoggedIn.getEmail());
 
         Map<String, Object> viewModel = Map.of("books", books);
-        viewModel.forEach((s, o) -> System.out.println(o));
-
         context.render("borrowed_books.html", viewModel);
     };
 

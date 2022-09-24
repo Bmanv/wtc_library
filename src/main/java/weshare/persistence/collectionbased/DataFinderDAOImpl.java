@@ -99,7 +99,6 @@ public class DataFinderDAOImpl implements DataFinderDAO {
     public List<BorrowedBooks> findBorrowedBooks(String email) {
 
         try{
-            System.out.println("We go");
             List<BorrowedBooksDO> borrowedBooks1 =
                     getFinderInterface().getBorrowedBooks(email);
 
